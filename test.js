@@ -1,53 +1,10 @@
 const sendByImage = function (src, callback) {
-  let image = new Image(1, 1);
-  image.onload = image.onerror = function () {
-    image.onload = image.onerror = null;
-    image = null;
-    callback && callback()
-  };
-  image.src = src;
+  console.log(url, callback);
 }
 
 
 const sendByForm = function (url, data, callback) {
-  let obj = {
-    tempform: document.createElement("form"),
-    frameId: "kjdp_sendBrowserLog" + Math.round(Math.random() * 100),
-    iframe: document.createElement("iframe")
-  }
-  obj.iframe.id = obj.frameId;
-  obj.iframe.name = obj.frameId;
-  obj.iframe.style.display = "none";
-  obj.iframe.src = "about:blank";
-  obj.tempform.action = url;
-  obj.tempform.method = "post";
-  // obj.tempform.target =obj.frameId;
-  obj.tempform.style.display = "none";
-  for (var attr in data) {
-    obj.opt = document.createElement("input");
-    obj.opt.name = attr;
-    obj.opt.value = data[attr];
-    obj.tempform.appendChild(obj.opt);
-  }
-  obj.opt = document.createElement("input");
-  obj.opt.type = "submit";
-  obj.tempform.appendChild(obj.opt);
-  document.body.appendChild(obj.iframe);
-  try {
-    obj.iframe.contentWindow.document.body.appendChild(obj.tempform);
-    // document.body.appendChild(); 
-    obj.tempform.submit();
-    obj.iframe.onload = function (data) {
-      // console.log('post返回:', data);
-      callback && callback(data)
-      setTimeout(function () {
-        obj.iframe.parentNode.removeChild(obj.iframe)
-        obj = {}
-      }, 10)
-    }
-  } catch (err) {
-    console.error(err)
-  }
+  console.log(url, data, callback);
 }
 
 function initMixin(fn) {
