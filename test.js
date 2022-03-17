@@ -1,5 +1,5 @@
 const sendByImage = function (src, callback) {
-  console.log(url, callback);
+  console.log(src, callback);
 }
 
 
