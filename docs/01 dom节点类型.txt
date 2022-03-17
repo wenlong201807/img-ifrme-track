@@ -1,0 +1,19 @@
+参考文档 https://www.w3school.com.cn/jsref/prop_node_nodetype.asp
+
+nodeType的十二种类型
+
+DOM nodeType 
+nodeType的十二种类型
+
+1 元素节点 document.body.nodeType
+2 属性节点
+3 文本节点
+4 CDATA区段
+5 实体应用元素
+6 实体
+7 表示处理指令
+8 注释节点
+9 最外层的Root element,包括所有其他节点
+10 <!DOCTYPE...>
+11 文档碎片节点
+12 DTD中声明的符号节点
